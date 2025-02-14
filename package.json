@@ -1,0 +1,28 @@
+{
+  "name": "google-chat-notification-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --fix",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "axios": "^1.7.9",
+    "exec": "^0.2.1",
+    "glob": "^11.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.1",
+    "prettier": "^3.5.1",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
