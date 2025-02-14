@@ -45,7 +45,7 @@ const notificationCard = async (name, url, status, customText) => {
   const refUrl = `${repoUrl}/tree/${branch}`;
   const eventPath = eventName === 'pull_request' ? `/pull/${number}` : `/commit/${sha}`;
   const eventUrl = `${repoUrl}${eventPath}`;
-  const viewRepo = `${repoUrl}`
+  const viewRepo = `${repoUrl}`;
   const profileUrl = `https://github.com/${actor}`;
 
   let commitMsg = '';
@@ -53,9 +53,7 @@ const notificationCard = async (name, url, status, customText) => {
     commitMsg = github.context.payload.head_commit.message || '';
   }
 
-  const customMessage = customText
-    ? `<b>Note:</b> ${customText}`
-    : '';
+  const customMessage = customText ? `<b>Note:</b> ${customText}` : '';
 
   const body = {
     cards: [
@@ -73,7 +71,8 @@ const notificationCard = async (name, url, status, customText) => {
                 keyValue: {
                   topLabel: 'Repository',
                   content: `${owner}/${repo}`,
-                  iconUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+                  iconUrl:
+                    'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
                   onClick: {
                     openLink: {
                       url: repoUrl,
@@ -85,7 +84,8 @@ const notificationCard = async (name, url, status, customText) => {
                 keyValue: {
                   topLabel: 'Branch',
                   content: branch,
-                  iconUrl: 'https://icons.iconarchive.com/icons/ionic/ionicons/256/git-branch-icon.png',
+                  iconUrl:
+                    'https://icons.iconarchive.com/icons/ionic/ionicons/256/git-branch-icon.png',
                   onClick: {
                     openLink: {
                       url: refUrl,
@@ -97,7 +97,8 @@ const notificationCard = async (name, url, status, customText) => {
                 keyValue: {
                   topLabel: 'Event',
                   content: eventName,
-                  iconUrl: 'https://icons.iconarchive.com/icons/github/octicons/256/bell-fill-16-icon.png',
+                  iconUrl:
+                    'https://icons.iconarchive.com/icons/github/octicons/256/bell-fill-16-icon.png',
                   onClick: {
                     openLink: {
                       url: eventUrl,
@@ -129,7 +130,9 @@ const notificationCard = async (name, url, status, customText) => {
                 keyValue: {
                   topLabel: 'Triggered by',
                   content: actor,
-                  iconUrl: actorAvatar || 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+                  iconUrl:
+                    actorAvatar ||
+                    'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
                   onClick: {
                     openLink: {
                       url: profileUrl,
@@ -153,7 +156,7 @@ const notificationCard = async (name, url, status, customText) => {
   const response = await axios.default.post(url, body);
   if (response.status !== 200) {
     throw new Error(
-      `Google Chat notification failed. response status=${response.status}\nResponse message=${response.data}`,
+      `Google Chat notification failed. response status=${response.status}\nResponse message=${response.data}`
     );
   }
 };

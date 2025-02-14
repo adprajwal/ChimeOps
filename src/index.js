@@ -9,10 +9,12 @@ const run = async () => {
     const status = JobStatus.parse(core.getInput('status', { required: true }));
     const customText = core.getInput('custom_text', { required: false });
 
-    console.log(`input params: name=${name}, `
-               + `status=${status}, `
-               + `url=${url}, `
-               + `custom_text=${customText}`);
+    console.log(
+      `input params: name=${name}, ` +
+        `status=${status}, ` +
+        `url=${url}, ` +
+        `custom_text=${customText}`
+    );
 
     await GoogleChat.notificationCard(name, url, status, customText);
     console.log('Sent message.');
