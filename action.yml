@@ -1,4 +1,4 @@
-name: 'google-chat-action-notification'
+name: 'google-chat-notifier'
 description: 'Easily notify your Google Chat room from GitHub Actions with detailed pipeline status updates.'
 author: 'Prajwal Adhikari'
 inputs:
@@ -9,7 +9,7 @@ inputs:
     description: 'The Google Chat Webhook URL to which notifications will be sent.'
     required: true
   status:
-    description: 'The current status of the job or step (e.g., success, failure, in-progress).'
+    description: 'The current status of the job or step (e.g., success, failure, cancelled).'
     required: true
   custom_text:
     description: 'Optional: Add a custom message to include in the notification.'
