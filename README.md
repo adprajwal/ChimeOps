@@ -23,7 +23,7 @@ Add the following step to your GitHub Actions workflow:
 
 ```yaml
 - name: Send Google Chat Notification
-  uses: adprajwal/google-chat-notifier@v1
+  uses: adprajwal/ChimeOps@v1
   with:
     name: "Deploy to Production"
     url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
