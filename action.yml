@@ -1,4 +1,4 @@
-name: 'google-chat-notification-action'
+name: 'DevAlert'
 description: 'Easily notify your Google Chat room from GitHub Actions with detailed pipeline status updates.'
 author: 'Prajwal Adhikari'
 inputs:
