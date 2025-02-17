@@ -3,7 +3,6 @@
 Send automated pipeline status notifications from GitHub Actions to Google Chat rooms seamlessly.
 
 ![GitHub](https://img.shields.io/github/license/adprajwal/ChimeOps)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/adprajwal/ChimeOps)
 
 ## Overview
 
@@ -23,7 +22,7 @@ Add the following step to your GitHub Actions workflow:
 
 ```yaml
 - name: Send Google Chat Notification
-  uses: adprajwal/google-chat-notifier@v1
+  uses: adprajwal/ChimeOps@v1
   with:
     name: "Deploy to Production"
     url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
